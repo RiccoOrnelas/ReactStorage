@@ -1,0 +1,242 @@
+[
+    {
+        "id": 1,
+        "Nome": "Processador",
+        "Tipo": "CPU",
+        "Valor": 1200.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-01"
+    },
+    {
+        "id": 2,
+        "Nome": "Placa Mãe",
+        "Tipo": "Motherboard",
+        "Valor": 800.00,
+        "Quantidade": 15,
+        "DataChegada": "2023-12-02"
+    },
+    {
+        "id": 3,
+        "Nome": "Memória RAM",
+        "Tipo": "RAM",
+        "Valor": 400.00,
+        "Quantidade": 20,
+        "DataChegada": "2023-12-03"
+    },
+    {
+        "id": 4,
+        "Nome": "Placa de Vídeo",
+        "Tipo": "GPU",
+        "Valor": 2500.00,
+        "Quantidade": 5,
+        "Chegada": "2023-12-04"
+    },
+    {
+        "id": 5,
+        "Nome": "Fonte",
+        "Tipo": "Power Supply",
+        "Valor": 350.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-05"
+    },
+    {
+        "id": 6,
+        "Nome": "SSD",
+        "Tipo": "Storage",
+        "Valor": 500.00,
+        "Quantidade": 15,
+        "DataChegada": "2023-12-06"
+    },
+    {
+        "id": 7,
+        "Nome": "HD",
+        "Tipo": "Storage",
+        "Valor": 300.00,
+        "Quantidade": 20,
+        "DataChegada": "2023-12-07"
+    },
+    {
+        "id": 8,
+        "Nome": "Cooler",
+        "Tipo": "Cooling",
+        "Valor": 150.00,
+        "Quantidade": 30,
+        "DataChegada": "2023-12-08"
+    },
+    {
+        "id": 9,
+        "Nome": "Gabinete",
+        "Tipo": "Case",
+        "Valor": 450.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-09"
+    },
+    {
+        "id": 10,
+        "Nome": "Monitor",
+        "Tipo": "Display",
+        "Valor": 700.00,
+        "Quantidade": 5,
+        "DataChegada": "2023-12-10"
+    },
+    {
+        "id": 11,
+        "Nome": "Teclado",
+        "Tipo": "Input",
+        "Valor": 200.00,
+        "Quantidade": 20,
+        "DataChegada": "2023-12-11"
+    },
+    {
+        "id": 12,
+        "Nome": "Mouse",
+        "Tipo": "Input",
+        "Valor": 100.00,
+        "Quantidade": 25,
+        "DataChegada": "2023-12-12"
+    },
+    {
+        "id": 13,
+        "Nome": "Headset",
+        "Tipo": "Audio",
+        "Valor": 300.00,
+        "Quantidade": 15,
+        "DataChegada": "2023-12-13"
+    },
+    {
+        "id": 14,
+        "Nome": "Webcam",
+        "Tipo": "Video",
+        "Valor": 250.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-14"
+    },
+    {
+        "id": 15,
+        "Nome": "Microfone",
+        "Tipo": "Audio",
+        "Valor": 150.00,
+        "Quantidade": 15,
+        "DataChegada": "2023-12-15"
+    },
+    {
+        "id": 16,
+        "Nome": "Impressora",
+        "Tipo": "Output",
+        "Valor": 800.00,
+        "Quantidade": 5,
+        "DataChegada": "2023-12-16"
+    },
+    {
+        "id": 17,
+        "Nome": "Scanner",
+        "Tipo": "Input",
+        "Valor": 600.00,
+        "Quantidade": 5,
+        "DataChegada": "2023-12-17"
+    },
+    {
+        "id": 18,
+        "Nome": "Roteador",
+        "Tipo": "Networking",
+        "Valor": 200.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-18"
+    },
+    {
+        "id": 19,
+        "Nome": "Switch",
+        "Tipo": "Networking",
+        "Valor": 150.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-19"
+    },
+    {
+        "id": 20,
+        "Nome": "Cabo HDMI",
+        "Tipo": "Cable",
+        "Valor": 50.00,
+        "Quantidade": 50,
+        "DataChegada": "2023-12-20"
+    },
+    {
+        "id": 21,
+        "Nome": "Cabo USB",
+        "Tipo": "Cable",
+        "Valor": 30.00,
+        "Quantidade": 50,
+        "DataChegada": "2023-12-21"
+    },
+    {
+        "id": 22,
+        "Nome": "Cabo de Rede",
+        "Tipo": "Cable",
+        "Valor": 40.00,
+        "Quantidade": 50,
+        "DataChegada": "2023-12-22"
+    },
+    {
+        "id": 23,
+        "Nome": "Adaptador",
+        "Tipo": "Adapter",
+        "Valor": 100.00,
+        "Quantidade": 20,
+        "DataChegada": "2023-12-23"
+    },
+    {
+        "id": 24,
+        "Nome": "Mousepad",
+        "Tipo": "Accessory",
+        "Valor": 50.00,
+        "Quantidade": 30,
+        "DataChegada": "2023-12-24"
+    },
+    {
+        "id": 25,
+        "Nome": "Suporte para Monitor",
+        "Tipo": "Accessory",
+        "Valor": 150.00,
+        "Quantidade": 10,
+        "DataChegada": "2023-12-25"
+    },
+    {
+        "id": 26,
+        "Nome": "Suporte para Notebook",
+        "Tipo": "Accessory",
+        "Valor": 100.00,
+        "Quantidade": 15,
+        "DataChegada": "2023-12-26"
+    },
+    {
+        "id": 27,
+        "Nome": "Suporte para Tablet",
+        "Tipo": "Accessory",
+        "Valor": 80.00,
+        "Quantidade": 20,
+        "DataChegada": "2023-12-27"
+    },
+    {
+        "id": 28,
+        "Nome": "Suporte para Celular",
+        "Tipo": "Accessory",
+        "Valor": 50.00,
+        "Quantidade": 25,
+        "DataChegada": "2023-12-28"
+    },
+    {
+        "id": 29,
+        "Nome": "Capa para Notebook",
+        "Tipo": "Accessory",
+        "Valor": 120.00,
+        "Quantidade": 15,
+        "DataChegada": "2023-12-29"
+    },
+    {
+        "id": 30,
+        "Nome": "Capa para Tablet",
+        "Tipo": "Accessory",
+        "Valor": 80.00,
+        "Quantidade": 20,
+        "DataChegada": "2023-12-30"
+    }
+]

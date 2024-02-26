@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<h1>Cadeia de Responsabilidade no Express</h1>
+<h2>Introdução</h2>
+<p>A &quot;cadeia de responsabilidade&quot; (chain of responsibility) é um padrão de projeto de software muito utilizado
+    em frameworks web como o Express. Este padrão permite que você encadeie diferentes funções (os
+    &quot;middlewares&quot;) para processar uma requisição antes de enviá-la para o manipulador de rota final.</p>
+<p>Neste ebook, vamos explorar em detalhes como a cadeia de responsabilidade funciona no Express, os seus benefícios e
+    como você pode utilizá-la nos seus projetos.</p>
+<h2>O que é cadeia de responsabilidade?</h2>
+<p>A cadeia de responsabilidade é um padrão comportamental, ou seja, ele gerencia e simplifica as comunicações entre
+    objetos em uma aplicação.</p>
+<p>A ideia central desse padrão é permitir que você passe uma requisição por uma cadeia de handlers. Cada handler decide
+    se processa a requisição ou a passa adiante para o próximo handler na cadeia.</p>
+<p>Isso evita o acoplamento da requisição a um handler específico e permite que você construa a lógica de processamento
+    da requisição através da cadeia, de forma modular.</p>
+<p>Algumas características-chave da cadeia de responsabilidade:</p>
+<ul>
+    <li>Cada handler tem uma única responsabilidade, como logging, autenticação, etc.</li>
+    <li>Handlers são independentes e desacoplados entre si.</li>
+    <li>A requisição viaja pela cadeia até ser processada por completo.</li>
+    <li>O fluxo é controlado pela própria cadeia, e não pelo objeto que fez a requisição.</li>
+</ul>
+<p>Esses handlers que processam a requisição são chamados de &quot;middlewares&quot; no contexto do Express e outros
+    frameworks web.</p>
+<h2>Middlewares no Express</h2>
+<p>O Express faz uso extensivo da cadeia de responsabilidade através dos middlewares. Os middlewares são funções que tem
+    acesso ao objeto de requisição (<code>req</code>), objeto de resposta (<code>res</code>) e próximo middleware na
+    cadeia.</p>
+<p>Um middleware típico se parece com isso:</p>
+<pre><code class="language-js">function meuMiddleware(req, res, next) {  // faz alguma coisa  next(); // passa para o próximo middleware}</code></pre>
+<p>Você pode executar qualquer código assíncrono antes de chamar <code>next()</code>. Isso permite que você faça desde
+    simples logging até consultas complexas no banco de dados.</p>
+<p>Alguns exemplos de casos de uso para middlewares:</p>
+<ul>
+    <li>Log de requisições</li>
+    <li>Autenticação e autorização</li>
+    <li>Manipulação de erros</li>
+    <li>Comunicação com bancos de dados</li>
+    <li>Renderização de templates</li>
+    <li>Validação de formulários</li>
+    <li>Serialização e desserialização de dados</li>
+    <li>E muito mais...</li>
+</ul>
+<p>O legal dos middlewares é que você pode encadear vários deles para criar um pipeline completo de processamento da
+    requisição:</p>
+<pre><code class="language-js">app.use(middleware1)   .use(middleware2)   .use(middleware3);</code></pre>
+<p>Cada middleware vai processando a requisição antes de passá-la adiante até chegar no manipulador de rota final, que
+    envia a resposta.</p>
+<h2>Benefícios da cadeia de responsabilidade</h2>
+<p>Utilizar a cadeia de responsabilidade através dos middlewares traz vários benefícios para uma aplicação Express:</p>
+<p><strong>1. Modularidade</strong></p>
+<p>Você pode separar as responsabilidades em handlers diferentes ao invés de colocar tudo em um lugar só.</p>
+<p><strong>2. Reutilização</strong></p>
+<p>Middleware criados podem ser reutilizados em várias rotas e aplicações.</p>
+<p><strong>3. Desacoplamento</strong></p>
+<p>Como os middlewares são independentes, fica fácil plugar, alterar ou remover qualquer handler na cadeia.</p>
+<p><strong>4. Manutenibilidade</strong></p>
+<p>Novas funcionalidades podem ser adicionadas simplesmente adicionando um middleware, sem precisar alterar o código
+    existente.</p>
+<p><strong>5. Organização</strong></p>
+<p>O código fica mais organizado e com responsabilidades bem definidas.</p>
+<p>Em resumo, a cadeia de responsabilidade promove boas práticas de desenvolvimento e entrega de software.</p>
+<h2>Criando middlewares</h2>
+<p>Agora que entendemos o conceito, vamos ver na prática algumas formas de criar middlewares em uma aplicação Express.
+</p>
+<p>Há 3 maneiras principais de declarar middlewares no Express:</p>
+<h3>1. Funções middleware independentes</h3>
+<p>Podemos declarar uma função middleware &quot;solta&quot; da seguinte forma:</p>
+<pre><code class="language-js">function meuMiddleware(req, res, next) {  // ...  next();}</code></pre>
+<p>Essa função pode ser reutilizada em várias partes da aplicação.</p>
+<h3>2. Funções middleware dentro do objeto app</h3>
+<p>Também podemos declarar funções middleware diretamente como propriedades do objeto de aplicativo:</p>
+<pre><code class="language-js">const app = express();app.use(function(req, res, next) {  // ...  next();})</code></pre>
+<p>Essas funções não são reutilizáveis. Elas só podem ser usadas nessa aplicação.</p>
+<h3>3. Módulos middleware</h3>
+<p>Podemos também criar um módulo que exporta uma função middleware:</p>
+<pre><code class="language-js">// my-middleware.js module.exports = function(req, res, next) {  // ...  next();  }</code></pre>
+<p>E depois importar esse módulo e usar com <code>app.use()</code>:</p>
+<pre><code class="language-js">const meuMiddleware = require('./my-middleware');app.use(meuMiddleware);  </code></pre>
+<p>Essa abordagem nos permite empacotar a lógica do middleware em um módulo e compartilhá-lo entre aplicações.</p>
+<h2>Exemplos de middlewares</h2>
+<p>Vamos ver agora na prática alguns exemplos de middlewares que podemos criar em uma aplicação Express.</p>
+<h3>Logging</h3>
+<p>Podemos criar um middleware de logging bem simples, apenas para registrar informações básicas de cada requisição:</p>
+<pre><code class="language-js">function logger(req, res, next) {  // Registra a data e hora  console.log(new Date());  // Registra método e URL  console.log(req.method, req.url);  // Passa para o próximo  next();}app.use(logger);</code></pre>
+<h3>Autenticação</h3>
+<p>Este middleware verifica se o usuário está autenticado. Caso contrário, redireciona para a página de login:</p>
+<pre><code class="language-js">function auth(req, res, next) {  if (req.session &amp;&amp; req.session.userId) {    return next();  }  return res.redirect('/login');}app.use(auth);</code></pre>
+<h3>Manipulação de erros</h3>
+<p>Captura erros globais da aplicação e retorna uma página de erro amigável:</p>
+<pre><code class="language-js">function errorHandler(err, req, res, next) {    console.error(err.stack);    res.status(500).render('error');}app.use(errorHandler);</code></pre>
+<p>E muitos outros casos...</p>
+<h2>Conclusão</h2>
+<p>A cadeia de responsabilidade é um padrão muito poderoso que permite adicionar funcionalidades à sua aplicação Express
+    de forma modular e desacoplada.</p>
+<p>Entender como usar middlewares é essencial para desenvolver bem com Express e Node.js. Isso porque boa parte da
+    mágica do framework acontece nesses middlewares.</p>
+<p>Portanto, espero que este ebook tenha ajudado você a entender como tirar o máximo proveito desse padrão em seus
+    projetos. Use middlewares para deixar seu código mais organizado, legível e de fácil manutenção.</p>
+<p>Boa sorte e bons estudos!</p>

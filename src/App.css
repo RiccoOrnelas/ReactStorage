@@ -1,0 +1,64 @@
+#root {
+  max-width: 1280px;
+  margin: 0;
+}
+
+.links {
+  color: white;
+}
+
+links::hover {
+  cursor: pointer;
+  color: aqua;
+
+
+}
+
+.dash {
+  font-family: Lato italic;
+}
+
+.box {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 11cm;
+  height: 7cm;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  border: solid white 2px;
+}
+
+.views {
+  display: flex;
+  gap: 2rem;
+  width: 90dvw;
+}
+
+table {
+  border: solid white 2px;
+  align-content: center;
+  margin-top: 10px;
+
+
+  width: 100%;
+  background-color: rgba(12, 12, 12, 0.877);
+  border-radius: 10px;
+  align-items: center;
+}
+
+td {
+  font-weight: bold;
+  color: yellow;
+}
+
+tr {
+  margin-left: 10cm;
+  color: white;
+  text-decoration: none;
+  font-weight: 200;
+
+}
