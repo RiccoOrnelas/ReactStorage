@@ -1,8 +1,3 @@
-# React + Vite
+# Sistema de Estoque
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Está em Desenvolvimento, sendo utilizado React e Vite. O user poderá Criar, Ler, Adicionar ou Deletar itens de seu estoque armazenados em um 'database' em json. (Ainda não é um DB não-relacional).
